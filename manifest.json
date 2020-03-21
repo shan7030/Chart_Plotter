@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Chart Plotter",
+  "description": "Draw Chart/Graph using .csv files. Simply Add a .csv and anlyze using graphs .",
+  "minimum_chrome_version": "46",
+  "version": "1.0.0",
+  "icons": {
+    "128": "logo_128.png"
+  },
+  "browser_action": {
+    "default_icon": "logo.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [ ]
+}

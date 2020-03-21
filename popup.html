@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chart Drawer</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+
+  <style>
+    /* Modal Structure */
+
+    html,
+    body {
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      margin: 0;
+      min-height: 180px;
+      padding: 0;
+      width: 384px;
+      background-color: #1e1e1e;
+    }
+
+    h1 {
+      font-family: "Menlo", monospace;
+      font-size: 22px;
+      font-weight: 400;
+      margin: 0;
+      color: #72bcd4;
+    }
+
+    a:link,
+    a:visited {
+      color: #000000;
+      outline: 0;
+      text-decoration: none;
+    }
+
+    img {
+      width: 30px;
+    }
+
+    .modal-header {
+      align-items: center;
+    }
+
+    .modal-content {
+      padding: 0 22px;
+    }
+
+    .modal-icons {
+      border-top: 0.5px solid #dadada;
+      height: 50px;
+      width: 100%;
+    }
+
+    .logo {
+      padding: 16px;
+    }
+
+    .logo-icon {
+      vertical-align: text-bottom;
+      margin-right: 12px;
+    }
+
+    .version {
+      color: #444;
+      font-size: 18px;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      float: center;
+      margin-left: 70px;
+    }
+
+    .flex-container-2 {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 22px;
+      float: center;
+      margin-left: 100px;
+    }
+
+    .flex {
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
+      width: 120px;
+    }
+
+    .flex-2 {
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
+      width: 100px;
+    }
+
+
+    .flex .fa {
+      font-size: 40px;
+      color: #2f5876;
+    }
+
+    button {
+      color: white;
+      background: #72bcd4;
+      border: 0px;
+    }
+
+
+    input[type=file] {
+      width: 100%;
+      background-color: #72bcd4;
+      color: white;
+      padding: 1px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #72bcd4;
+      color: white;
+      padding: 1px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 10px;
+      margin-top: 10px;
+      margin-left: 70px;
+
+    }
+  </style>
+  
+  <script src="js/jquery.js"></script>
+
+<script src="js/chart.js" ></script>
+  <script src="js/bootstrap.js" ></script>
+
+
+</head>
+
+<body>
+  <div class="modal-header">
+    <h1 class="logo" style="margin-left: 50px;">
+      <img class="logo-icon" src="images/logo_128.png" />CHART PLOTTER
+    </h1>
+  </div>
+  <div class="modal-content">
+    <p style="margin-left: 50px;color:white">
+      <b>Add a .csv and anlyze using graphs</b>
+    </p>
+  </div>
+
+  <div class="modal-icons">
+
+    <div class="flex-container-2">
+      <div class="flex" style="color: white;">
+
+        Select the .csv File
+      </div>
+
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-2">
+        <input type="file" id="myFile" style="width: 200px;" accept=".csv">
+      </div>
+
+    </div>
+
+    <div>
+      <hr style="border-bottom: 0.5px solid #dadada; margin-top: 15px;">
+    </div>
+    <div class="flex-container">
+      <div class="flex-2" style="width: 400px;margin-top: 5px;">
+
+        <label for="quantity" style="color: white;">Column no.(Start from 1) for X-axis :</label>
+        <input type="number" id="quantity_1" name="quantity" style="width: 40px;" min="1"> </div>
+
+    </div>
+
+    <div class="flex-container">
+      <div class="flex-2" style="width: 400px;margin-top: 5px;">
+
+        <label for="quantity" style="color: white;">Column no.(Start from 1) for Y-axis :</label>
+        <input type="number" id="quantity_2" name="quantity" style="width: 40px;" min="1"> </div>
+
+    </div>
+    <div class="flex-container">
+      <div class="flex-2" style="width: 400px;margin-top: 5px;">
+
+        <label for="quantity" style="color: white;">Data Starts from row (Start from 1) :</label>
+        <input type="number" id="quantity_3" name="quantity" style="width: 40px;" min="1"> </div>
+
+    </div>
+    <div>
+      <hr style="border-bottom: 0.5px solid #dadada; margin-top: 15px;">
+    </div>
+
+
+    <button type="submit" style="width: 220px;" id="myButton">
+      Plot The Graph
+    </button>
+
+
+    <div>
+      <hr style="border-bottom: 0.5px solid #dadada; margin-top: 15px;">
+    </div>
+
+
+    <div class="chart_here">
+      <canvas id="myChart"></canvas>
+
+    </div>
+
+
+  </div>
+
+
+
+</body>
+
+<script src="popup.js"></script>
+
+</html>
